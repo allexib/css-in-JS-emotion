@@ -2,14 +2,27 @@ import logo from './logo.svg';
 import './App.css';
 
 import {css} from '@emotion/css';
+import {ThemeProvider} from "@emotion/react";
 import {Button} from "./components/Button";
 
 const bgColor = '#282c34';
 
+const theme = {
+    color: {
+        primary: 'white',
+        secondary: 'lightblue'
+    },
+    textColor: {
+        primary: 'blue',
+        secondary: 'black',
+    },
+};
+
 function App() {
     return (
-        <div
-            className={css`
+        <ThemeProvider theme={theme}>
+            <div
+                className={css`
             text-align: center;
             background-color: ${bgColor};
             min-height: 100vh;
@@ -21,9 +34,10 @@ function App() {
             color: white;
             `}
             >
-            <img src={logo} className="App-logo" alt="logo"/>
-            <Button>Click me</Button>
-        </div>
+                <img src={logo} className="App-logo" alt="logo"/>
+                <Button>Click me</Button>
+            </div>
+        </ThemeProvider>
     );
 }
 

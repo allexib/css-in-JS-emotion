@@ -1,16 +1,16 @@
 import {css} from "@emotion/react";
 import styled from "@emotion/styled";
 
-function Text({children, isPrymary}) {
+function Text({children, isPrimary}) {
     return <span css={css`
     font-size: 3rem;
-    color: ${isPrymary ? 'blue' : 'black'};
+    color: ${isPrimary ? 'blue' : 'black'};
     `}
     >{children}</span>
 }
 
 const StyledButton = styled.button`
-background-color: ${(props) => props.isPrymary ? 'white' : 'lightblue'};
+background-color: ${(props) => props.isPrimary ? props.theme.color.primary : props.theme.color.secondary};
 border-radius: 1rem;
 
 &:active {
@@ -19,7 +19,7 @@ apacity: 0.5;
 `;
 
 export function Button({children}) {
-    return <StyledButton isPrymary>
-        <Text isPrymary>{children}</Text>
+    return <StyledButton isPrimary>
+        <Text isPrimary>{children}</Text>
     </StyledButton>;
 }
