@@ -1,10 +1,12 @@
-import {css} from "@emotion/react";
+import {css, useTheme} from "@emotion/react";
 import styled from "@emotion/styled";
 
 function Text({children, isPrimary}) {
+    const theme = useTheme();
+
     return <span css={css`
     font-size: 3rem;
-    color: ${isPrimary ? 'blue' : 'black'};
+    color: ${isPrimary ? theme.textColor.primary : theme.textColor.secondary};
     `}
     >{children}</span>
 }
