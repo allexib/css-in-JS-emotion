@@ -10,7 +10,7 @@ function Text({children}) {
 }
 
 const StyledButton = styled.button`
-background-color: lightblue;
+background-color: ${(props) => props.isPrymary ? 'white' : 'lightblue'};
 border-radius: 1rem;
 
 &:active {
@@ -19,7 +19,7 @@ apacity: 0.5;
 `;
 
 export function Button({children}) {
-    return <StyledButton>
+    return <StyledButton isPrymary>
         <Text>{children}</Text>
-    </StyledButton>;
+    </StyledButton>;  
 }
