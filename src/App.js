@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import {css} from '@emotion/css';
+import {Button} from "./components/Button";
 
 const bgColor = '#282c34';
 
@@ -21,6 +22,7 @@ function App() {
             `}
             >
             <img src={logo} className="App-logo" alt="logo"/>
+            <Button>Click me</Button>
         </div>
     );
 }
