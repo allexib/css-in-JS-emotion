@@ -1,5 +1,5 @@
-
 import {css} from "@emotion/react";
+import styled from "@emotion/styled";
 
 function Text({children}) {
     return <span css={css`
@@ -9,8 +9,17 @@ function Text({children}) {
     >{children}</span>
 }
 
+const StyledButton = styled.button`
+background-color: lightblue;
+border-radius: 1rem;
+
+&:active {
+apacity: 0.5;
+}
+`;
+
 export function Button({children}) {
-    return <button>
+    return <StyledButton>
         <Text>{children}</Text>
-    </button>;
+    </StyledButton>;
 }
